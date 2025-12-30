@@ -1,0 +1,147 @@
+/* ===========================
+   VESPER CORE PALETTE
+   =========================== */
+:root {
+    --black: #000000;
+    --charcoal: #0A0A0A;
+    --blood-bronze: #8C3F2F;
+    --ash-silver: #C4C4C4;
+    --ember-red: #B33A3A;
+    --void-purple: #1A0F1F;
+}
+
+/* ===========================
+   GLOBAL RESET
+   =========================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: var(--black);
+    color: var(--ash-silver);
+    font-family: "Cinzel", serif;
+    overflow-x: hidden;
+}
+
+/* ===========================
+   HERO SECTION
+   =========================== */
+.hero {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    background: radial-gradient(circle at center,
+        var(--void-purple) 0%,
+        var(--charcoal) 60%,
+        var(--black) 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+/* Ambient glow behind emblem */
+.ambient-light {
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle,
+        var(--ember-red) 0%,
+        transparent 70%);
+    filter: blur(120px);
+    opacity: 0.25;
+    animation: pulse 6s ease-in-out infinite;
+}
+
+/* Parallax layers */
+.parallax-layer {
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    top: -50%;
+    left: -50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 0.05;
+    pointer-events: none;
+}
+
+.layer-back {
+    background-image: url("textures/noise-back.svg");
+    animation: driftBack 40s linear infinite;
+}
+
+.layer-front {
+    background-image: url("textures/noise-front.svg");
+    animation: driftFront 25s linear infinite;
+}
+
+/* Emblem */
+.emblem-container {
+    position: relative;
+    z-index: 10;
+    animation: emblemFade 2.5s ease forwards;
+}
+
+.emblem {
+    width: 260px;
+    filter: drop-shadow(0 0 25px var(--ember-red));
+    animation: emblemFloat 6s ease-in-out infinite;
+}
+
+/* Text */
+.title {
+    margin-top: 30px;
+    font-size: 3.5rem;
+    letter-spacing: 0.4rem;
+    color: var(--ash-silver);
+    text-shadow: 0 0 20px var(--blood-bronze);
+    animation: textFade 3s ease forwards;
+}
+
+.subtitle {
+    margin-top: 10px;
+    font-size: 1.1rem;
+    letter-spacing: 0.2rem;
+    opacity: 0.7;
+    animation: textFade 4s ease forwards;
+}
+
+/* ===========================
+   ANIMATIONS
+   =========================== */
+@keyframes pulse {
+    0%, 100% { opacity: 0.15; }
+    50% { opacity: 0.35; }
+}
+
+@keyframes driftBack {
+    0% { transform: translate(0, 0); }
+    100% { transform: translate(5%, 5%); }
+}
+
+@keyframes driftFront {
+    0% { transform: translate(0, 0); }
+    100% { transform: translate(-5%, -5%); }
+}
+
+@keyframes emblemFloat {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-12px); }
+}
+
+@keyframes emblemFade {
+    from { opacity: 0; transform: scale(0.9); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes textFade {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+
