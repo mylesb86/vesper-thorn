@@ -2,13 +2,15 @@
    VESPER CORE PALETTE
    =========================== */
 :root {
-    --black: #000000;
-    --charcoal: #0A0A0A;
-    --blood-bronze: #8C3F2F;
-    --ash-silver: #C4C4C4;
-    --ember-red: #B33A3A;
-    --void-purple: #1A0F1F;
+  --black: #000000;
+  --charcoal: #0A0A0A;
+  --blood-bronze: #8C3F2F;
+  --ash-silver: #C4C4C4;
+  --ember-red: #B33A3A;
+  --void-purple: #1A0F1F;
 }
+
+
 
 /* ===========================
    GLOBAL RESET
