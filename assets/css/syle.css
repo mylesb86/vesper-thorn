@@ -73,12 +73,14 @@ body {
 }
 
 .layer-back {
-    background-image: url("textures/noise-back.svg");
+    background-image: url("../../textures/noise-back.svg");
+
     animation: driftBack 40s linear infinite;
 }
 
 .layer-front {
-    background-image: url("textures/noise-front.svg");
+   background-image: url("../../textures/noise-front.svg");
+
     animation: driftFront 25s linear infinite;
 }
 
